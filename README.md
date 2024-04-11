@@ -1,20 +1,47 @@
-[![Python 2.6 2.7 3.7](https://img.shields.io/badge/python-2.6%20%7C%202.7%20%7C%203.7-blue.svg)](https://www.python.org/)
-[![Build Status](https://dev.azure.com/shotgun-ecosystem/Toolkit/_apis/build/status/Engines/tk-photoshopcc?branchName=master)](https://dev.azure.com/shotgun-ecosystem/Toolkit/_build/latest?definitionId=69&branchName=master)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Linting](https://img.shields.io/badge/PEP8%20by-Hound%20CI-a873d1.svg)](https://houndci.com)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/nfa-vfxim/tk-photoshopcc?include_prereleases)](https://github.com/nfa-vfxim/tk-photoshopcc) 
+[![GitHub issues](https://img.shields.io/github/issues/nfa-vfxim/tk-photoshopcc)](https://github.com/nfa-vfxim/tk-photoshopcc/issues) 
 
-## Documentation
-This repository is a part of the ShotGrid Pipeline Toolkit.
 
-- For more information about this app and for release notes, *see the wiki section*.
-- For general information and documentation, click here: https://developer.shotgridsoftware.com/d587be80/?title=Integrations+User+Guide
-- For information about ShotGrid in general, click here: https://help.autodesk.com/view/SGSUB/ENU/
+# ShotGrid Engine for Photoshop CC <img src="icon_256.png" alt="Icon" height="24"/>
 
-## Using this app in your Setup
-All the apps that are part of our standard app suite are pushed to our App Store.
-This is where you typically go if you want to install an app into a project you are
-working on. For an overview of all the Apps and Engines in the Toolkit App Store,
-click here: https://developer.shotgridsoftware.com/162eaa4b/?title=Pipeline+Integration+Components
+ShotGrid Integration for Photoshop CC
 
-## Have a Question?
-Don't hesitate to contact us! You can find us on https://knowledge.autodesk.com/contact-support
+## Requirements
+
+| ShotGrid version | Core version | Engine version |
+|------------------|--------------|----------------|
+| -                | v0.19.18     | -              |
+
+**Frameworks:**
+
+| Name                      | Version | Minimum version |
+|---------------------------|---------|-----------------|
+| tk-framework-shotgunutils | v5.x.x  |                 |
+| tk-framework-adobe        | v1.x.x  |                 |
+
+
+
+## Configuration
+
+### Booleans
+
+| Name                       | Description                                                         | Default value |
+|----------------------------|---------------------------------------------------------------------|---------------|
+| `automatic_context_switch` | Controls whether an active document change causes a context change. | True          |
+| `debug_logging`            | Controls whether debug messages should be emitted to the logger     | False         |
+
+
+### Lists
+
+| Name              | Description                                                                                                                                                                                                                                                                                                                                             | Default value |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `shelf_favorites` | Controls the registered commands that show up in the favorites shelf in the ShotGrid panel. This is a list where each item is a dictionary with keys 'app_instance' and 'name'. The 'app_instance' key connects this entry to a particular app instance defined in the environment configuration file. The 'name' is a command name to make a favorite. | []            |
+
+
+### Hooks
+
+| Name                          | Description                                                                             | Default value                    |
+|-------------------------------|-----------------------------------------------------------------------------------------|----------------------------------|
+| `context_fields_display_hook` | Hook which controls how context fields are queried and displayed in the context header. | {self}/context_fields_display.py |
+
+
